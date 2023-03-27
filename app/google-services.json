@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "310857118740",
+    "project_id": "informatics-2b68c",
+    "storage_bucket": "informatics-2b68c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310857118740:android:b27eb56cbc9d63618ee301",
+        "android_client_info": {
+          "package_name": "com.example.informatics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310857118740-lkboem42q0f871uci40pso5lg3bbbmtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP2gS-hpRLpyGq3Wh1dkt5gXM2g7VXo40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310857118740-lkboem42q0f871uci40pso5lg3bbbmtf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
