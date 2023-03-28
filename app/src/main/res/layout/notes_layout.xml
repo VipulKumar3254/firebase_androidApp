@@ -7,6 +7,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="2dp"
         app:cardCornerRadius="5dp"
         app:cardMaxElevation="5dp"
         android:id="@+id/notecard">
@@ -28,15 +29,16 @@
                     android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"
-                    android:text="this is your Developer "
+                    android:text="this is your title "
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_weight="1"></TextView>
 
                 <androidx.constraintlayout.utils.widget.ImageFilterButton
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/menupopbutton"
+                    android:background="@color/transparent"
                     android:src="@drawable/baseline_more_vert_24"
                     android:layout_weight="0"></androidx.constraintlayout.utils.widget.ImageFilterButton>
 
@@ -49,7 +51,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingLeft="10dp"
-                android:text="this is your code which appera here"
+                android:text="this is the content of the note."
                 android:textSize="15sp"
                 android:textColor="@color/black"
                 ></TextView>

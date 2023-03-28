@@ -75,7 +75,8 @@ public class createNote extends AppCompatActivity {
                     documentReference.set(note).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(createNote.this, "note crated successfully", Toast.LENGTH_SHORT).show();
+                            mprogressbarofcreatenote.setVisibility(View.VISIBLE);
+
                             startActivity(new Intent(createNote.this,notesActivity .class));
 
 
@@ -83,9 +84,9 @@ public class createNote extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+
                             Toast.makeText(createNote.this, "failed to create note", Toast.LENGTH_SHORT).show();
 //                            startActivity(new Intent(createNote.this,notesActivity.class));
-                            mprogressbarofcreatenote.setVisibility(View.INVISIBLE);
 
 
 

@@ -35,6 +35,8 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class notesActivity extends AppCompatActivity {
@@ -124,36 +126,44 @@ public class notesActivity extends AppCompatActivity {
         });
     }
 
+    StringBuilder stringBuilder= new StringBuilder();
         public void eventChangeListener(){
             TextView raj= findViewById(R.id.raj);
         db.collection("notes").document(firebaseUser.getUid()).collection("myNotes").orderBy("title", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        for(DocumentChange dc : value.getDocumentChanges())
-                        {
-                            if(dc.getType()== DocumentChange.Type.ADDED) {
+                        if (error != null) {
+
+
+                            Log.e("error is ", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
                                 notes1 = dc.getDocument().toObject(firebasemodel.class);
                                 notes1.setDocId(dc.getDocument().getId());
                                 notes.add(notes1);
                             }
+                            if(dc.getType()==DocumentChange.Type.REMOVED)
+                            {
 
+                                for(int i=0;i<notes.size();i++)
+                                {
+                                    if(notes.get(i).getDocId()==dc.getDocument().getId())
+                                    {
+                                        notes.remove(i);
+                                    }
+                                }
 
+                            }
 
-//                            else if (dc.getType()==DocumentChange.Type.REMOVED)
-//                            {
-//                                notes1= dc.getDocument().toObject(firebasemodel.class);
-//                                notes1.setDocId(dc.getDocument().getId());
-//                                notes.add(notes1);
-//
-//                            }
-//                            else if(dc.getType()==DocumentChange.Type.MODIFIED)
-//                            {
-//                                notes1= dc.getDocument().toObject(firebasemodel.class);
-//                                notes1.setDocId(dc.getDocument().getId());
-//                                notes.add(notes1);
-//
-//                            }
+                            if(dc.getType()== DocumentChange.Type.MODIFIED)
+                            {
+//                                TextView raj = findViewById(R.id.raj);
+//                              raj.setText(notes.get(0).);
+                            }
+
 
                             notesadapter.notifyDataSetChanged();
                         }

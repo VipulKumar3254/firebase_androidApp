@@ -6,13 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".createNote">
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="invisible"
-        android:id="@+id/progessbarofcreatenoteactivity"
-        android:layout_marginTop="10dp"></ProgressBar>
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -44,6 +38,13 @@
         android:layout_below="@+id/toolbarofcreatenote"
         android:padding="15dp"
         android:id="@+id/createcontentofnote"></EditText>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:id="@+id/progessbarofcreatenoteactivity"
+        android:layout_marginTop="10dp"></ProgressBar>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
